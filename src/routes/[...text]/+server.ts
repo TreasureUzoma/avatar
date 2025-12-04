@@ -1,3 +1,7 @@
+export const config = {
+	runtime: 'edge'
+};
+
 import { error } from '@sveltejs/kit';
 import { generateDeterministicNumber } from '$lib/deterministic-hash';
 import type { RequestHandler } from './$types.js';
