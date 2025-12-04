@@ -1,24 +1,23 @@
 import { error } from '@sveltejs/kit';
-import { readFileSync, existsSync } from 'fs';
-import { join } from 'path';
 import { generateDeterministicNumber } from '$lib/deterministic-hash';
 import type { RequestHandler } from './$types.js';
 
-export const GET: RequestHandler = async () => {
+export const GET: RequestHandler = async ({ fetch }) => {
 	// Generate random text for favicon
 	const randomText = Math.random().toString(36).substring(7);
 	const id = generateDeterministicNumber(randomText);
 
-	// Construct file path
-	const filePath = join(process.cwd(), 'static', 'avatars', `${id}.png`);
+	// Fetch the avatar from static folder
+	const avatarUrl = `/avatars/${id}.png`;
+	const response = await fetch(avatarUrl);
 
 	// Check if file exists
-	if (!existsSync(filePath)) {
+	if (!response.ok) {
 		throw error(404, 'Avatar not found');
 	}
 
-	// Read the file
-	const buffer = readFileSync(filePath);
+	// Get the image buffer
+	const buffer = await response.arrayBuffer();
 
 	// Return the image
 	return new Response(buffer, {

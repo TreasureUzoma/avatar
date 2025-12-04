@@ -1,32 +1,30 @@
 import { error } from '@sveltejs/kit';
-import { readFileSync, existsSync } from 'fs';
-import { join } from 'path';
-import { meta } from '$lib/meta';
 import { generateDeterministicNumber } from '$lib/deterministic-hash';
 import type { RequestHandler } from './$types.js';
 
-export const GET: RequestHandler = async ({ params }) => {
+export const GET: RequestHandler = async ({ params, fetch }) => {
 	// Get the catch-all path segments
-	const text = params.text || meta.developer.nickname;
+	const text = params.text || '';
 
 	// Block empty path if needed
-	if (!params.text || params.text.trim() === '') {
+	if (!text || text.trim() === '') {
 		throw error(400, 'Missing required path segments (e.g., /username).');
 	}
 
 	// Generate deterministic avatar ID from text
 	const id = generateDeterministicNumber(text);
 
-	// Construct file path
-	const filePath = join(process.cwd(), 'static', 'avatars', `${id}.png`);
+	// Fetch the avatar from static folder
+	const avatarUrl = `/avatars/${id}.png`;
+	const response = await fetch(avatarUrl);
 
 	// Check if file exists
-	if (!existsSync(filePath)) {
+	if (!response.ok) {
 		throw error(404, 'Avatar not found');
 	}
 
-	// Read the file
-	const buffer = readFileSync(filePath);
+	// Get the image buffer
+	const buffer = await response.arrayBuffer();
 
 	// Return the image with proper headers
 	return new Response(buffer, {
