@@ -11,7 +11,7 @@
 	<title>{meta.siteTitle}</title>
 	<meta name="description" content={meta.siteDescription} />
 	<link rel="canonical" href={meta.siteUrl} />
-	<link rel="icon" type="image/png" href="/favicon.ico" />
+	<link rel="icon" type="image/png" href="/favicon.png" />
 	<meta
 		name="keywords"
 		content="generative avatar, random profile picture, gradient pfp, minimalist avatar, identicon, profile generator, abstract avatar, idolo avatars, outspace studios avatar, outspace studios avatar api, random avatar api"
