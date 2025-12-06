@@ -1,26 +1,18 @@
 <script lang="ts">
 	import { Input } from '$lib/components/ui/input';
-	import { goto } from '$app/navigation';
-	import { page } from '$app/stores';
 
 	interface Props {
 		text: string;
+		onTextChange: (newText: string) => void;
 	}
 
-	let { text }: Props = $props();
+	let { text, onTextChange }: Props = $props();
 
 	function handleChange(e: Event) {
 		const target = e.target as HTMLInputElement;
 		const value = target.value;
-		const params = new URLSearchParams($page.url.searchParams);
 
-		if (value) {
-			params.set('text', value);
-		} else {
-			params.delete('text');
-		}
-
-		goto(`?${params.toString()}`, { replaceState: true, keepFocus: true });
+		onTextChange(value);
 	}
 </script>
 
