@@ -11,7 +11,7 @@
 
 <div class="flex min-h-screen items-center justify-center">
 	<section
-		class="flex min-h-screen w-full max-w-lg flex-col items-center justify-between py-32 px-16"
+		class="flex min-h-screen w-full max-w-lg flex-col items-center justify-center space-x-5 md:space-y-0 md:justify-between py-32 px-16"
 	>
 		<ImagePreview {text} />
 		<InputForm {text} onTextChange={handleTextChange} />
