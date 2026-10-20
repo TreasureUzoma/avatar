@@ -75,6 +75,11 @@
 	<!-- Preconnect to improve performance -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+
+	<!-- Prefetch avatar images for better performance -->
+	{#each Array.from({ length: 10 }, (_, i) => i + 1) as num}
+		<link rel="prefetch" href="/avatars/{num}.png" as="image" />
+	{/each}
 </svelte:head>
 
 <ModeWatcher />
