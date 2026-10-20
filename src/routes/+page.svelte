@@ -10,7 +10,15 @@
 	}
 </script>
 
-<article class="flex min-h-screen items-center justify-center">
+<article class="flex min-h-screen items-center justify-center relative">
+	<!-- Docs Link -->
+	<a
+		href="/docs"
+		class="absolute top-6 right-6 text-sm text-muted-foreground hover:text-foreground transition-colors"
+	>
+		Documentation
+	</a>
+
 	<section
 		class="flex min-h-screen w-full max-w-lg flex-col items-center justify-center space-y-17 md:space-y-0 md:justify-between py-32 px-16"
 		aria-label="Avatar Generator"
@@ -19,7 +27,7 @@
 			<h1>Free Generative Avatar Generator</h1>
 			<p>{meta.siteDescription}</p>
 		</header>
-		
+
 		<ImagePreview {text} />
 		<InputForm {text} onTextChange={handleTextChange} />
 	</section>
