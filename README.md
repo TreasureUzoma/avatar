@@ -1,39 +1,41 @@
-# Idolodev Avatars
+# idolodev Avatars
 
 A web application for instantly generating unique, random, and aesthetically pleasing minimalist gradient avatars from any text input. This project provides high-quality, reproducible avatars perfect for profile pictures, applications, and placeholder images.
 
 ## Features
 
--   **Deterministic Generation**: Consistently generates the same avatar for the same text input, ensuring reproducibility.
--   **Instant Preview**: See the generated avatar update in real-time as you type.
--   **Minimalist Design**: A clean, modern, and user-friendly interface.
--   **Theme Support**: Seamlessly switch between light and dark modes for optimal viewing comfort.
--   **Built with SvelteKit**: Leverages the power of SvelteKit for a fast, modern, and scalable web experience.
+- **Deterministic Generation**: Consistently generates the same avatar for the same text input, ensuring reproducibility.
+- **Instant Preview**: See the generated avatar update in real-time as you type.
+- **Minimalist Design**: A clean, modern, and user-friendly interface.
+- **Theme Support**: Seamlessly switch between light and dark modes for optimal viewing comfort.
+- **Built with SvelteKit**: Leverages the power of SvelteKit for a fast, modern, and scalable web experience.
 
 ## Stacks / Technologies
 
 This project is built with a modern, efficient, and developer-friendly technology stack.
 
-| Technology | Description |
-| :--- | :--- |
-| [SvelteKit](https://kit.svelte.dev/) | A framework for building robust, high-performance web applications. |
-| [Tailwind CSS](https://tailwindcss.com/) | A utility-first CSS framework for rapid UI development. |
-| [TypeScript](https://www.typescriptlang.org/) | A typed superset of JavaScript that enhances code quality and maintainability. |
-| [shadcn-svelte](https://shadcn-svelte.com/) | Re-usable components built using Svelte and Tailwind CSS for a consistent design. |
-| [bits-ui](https://bits-ui.com/) | A collection of headless, unstyled Svelte components for building accessible UIs. |
-| [Lucide](https://lucide.dev/) | A beautiful and consistent icon toolkit. |
-| [Vite](https://vitejs.dev/) | A next-generation frontend build tool that provides a fast development experience. |
+| Technology                                    | Description                                                                        |
+| :-------------------------------------------- | :--------------------------------------------------------------------------------- |
+| [SvelteKit](https://kit.svelte.dev/)          | A framework for building robust, high-performance web applications.                |
+| [Tailwind CSS](https://tailwindcss.com/)      | A utility-first CSS framework for rapid UI development.                            |
+| [TypeScript](https://www.typescriptlang.org/) | A typed superset of JavaScript that enhances code quality and maintainability.     |
+| [shadcn-svelte](https://shadcn-svelte.com/)   | Re-usable components built using Svelte and Tailwind CSS for a consistent design.  |
+| [bits-ui](https://bits-ui.com/)               | A collection of headless, unstyled Svelte components for building accessible UIs.  |
+| [Lucide](https://lucide.dev/)                 | A beautiful and consistent icon toolkit.                                           |
+| [Vite](https://vitejs.dev/)                   | A next-generation frontend build tool that provides a fast development experience. |
 
 ## Installation
 
 To get a local copy up and running, please follow these simple steps.
 
 1.  **Clone the repository**
+
     ```sh
     git clone https://github.com/treasureuzoma/avatar.git
     ```
 
 2.  **Navigate to the project directory**
+
     ```sh
     cd avatar
     ```
@@ -49,6 +51,7 @@ To get a local copy up and running, please follow these simple steps.
 Once the installation is complete, you can run the development server.
 
 1.  **Start the development server**
+
     ```sh
     pnpm run dev
     ```
