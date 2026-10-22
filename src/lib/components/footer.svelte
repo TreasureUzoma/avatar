@@ -84,7 +84,7 @@
 			<div class="text-xs text-muted-foreground text-center">
 				Avatar designs by{' '}
 				<a
-					href="https://outpace.systems/"
+					href="https://www.outpacestudios.com/"
 					class="font-medium text-foreground hover:underline"
 					target="_blank"
 					rel="noopener noreferrer"
