@@ -104,6 +104,42 @@ const username = ref('john-doe');
 			</div>
 		</section>
 
+		<!-- Initials -->
+		<section class="mb-12">
+			<h2 class="text-2xl font-semibold mb-4">Initials</h2>
+			<p class="text-muted-foreground mb-6">
+				Add <code>?format=text</code> to any avatar URL to get the same avatar with the initials
+				drawn on top. The initials are the first letter of the first and last word, so "john doe"
+				becomes "JD". The text is always dark enough to stay readable on the avatar's colours.
+			</p>
+
+			<div class="bg-muted p-4 rounded-lg overflow-x-auto">
+				<pre class="text-sm"><code>&lt;img src="{meta.siteUrl}/john-doe?format=text" alt="JD" /&gt;</code></pre>
+			</div>
+			<p class="text-sm text-muted-foreground mt-3">
+				This version is returned as an SVG (<code>image/svg+xml</code>), so it works in
+				<code>&lt;img&gt;</code> tags.
+			</p>
+
+			<h3 class="text-lg font-medium mt-6 mb-3">Colours</h3>
+			<p class="text-muted-foreground mb-4">
+				Use <code>color</code> for the text and <code>bg</code> for a solid background that
+				replaces the gradient. Both take a hex colour such as <code>ff8800</code>,
+				<code>f80</code> or <code>%23ff8800</code> (a <code>#</code> must be written as
+				<code>%23</code> in a URL). If you only set <code>bg</code>, the text automatically
+				switches to black or white, whichever is easier to read on it.
+			</p>
+			<div class="bg-muted p-4 rounded-lg overflow-x-auto">
+				<pre class="text-sm"><code>{`${meta.siteUrl}/john-doe?format=text&bg=1e293b
+${meta.siteUrl}/john-doe?format=text&bg=0f172a&color=38bdf8
+${meta.siteUrl}/john-doe?format=text&color=ffffff`}</code></pre>
+			</div>
+			<p class="text-sm text-muted-foreground mt-3">
+				Both options only apply together with <code>format=text</code>, and an invalid colour
+				returns a 400 error.
+			</p>
+		</section>
+
 		<!-- Features -->
 		<section class="mb-12">
 			<h2 class="text-2xl font-semibold mb-4">Features</h2>
