@@ -10,6 +10,17 @@ A web application for instantly generating unique, random, and aesthetically ple
 - **Theme Support**: Seamlessly switch between light and dark modes for optimal viewing comfort.
 - **Built with SvelteKit**: Leverages the power of SvelteKit for a fast, modern, and scalable web experience.
 
+## Initials
+
+Add `?format=text` to any avatar URL to get the same avatar with the initials drawn on top, for example `/john-doe?format=text` shows `JD` on John Doe's avatar. The initials are the first letter of the first and last word, and the text colour is chosen so it stays readable on the avatar's colours. This version is returned as an SVG (`image/svg+xml`) with the avatar embedded, so it works in `<img>` tags.
+
+Together with `format=text` you can also set the colours:
+
+- `color`: the text colour
+- `bg`: a solid background that replaces the gradient. If you don't set `color`, the text switches to black or white automatically, whichever reads better on your `bg`.
+
+Both take a hex colour such as `ff8800`, `f80` or `%23ff8800` (write `#` as `%23` in a URL), for example `/john-doe?format=text&bg=0f172a&color=38bdf8`. An invalid colour returns a 400 error.
+
 ## Stacks / Technologies
 
 This project is built with a modern, efficient, and developer-friendly technology stack.
